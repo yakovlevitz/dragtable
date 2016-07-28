@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="http://akottr.github.io/css/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="http://akottr.github.io/css/akottr.css"/>
+        <link rel="stylesheet" type="text/css" href="https://rawgit.com/akottr/dragtable/master/dragtable.css"/>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+        <script src="https://rawgit.com/akottr/dragtable/master/jquery.dragtable.js"></script>
+
+        <!-- only for jquery.chili-2.2.js -->
+        <script src="http://code.jquery.com/jquery-migrate-1.1.1.js"></script>
+        <script type="text/javascript" src="http://akottr.github.io/js/jquery.chili-2.2.js"></script>
+
+        <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" media="screen" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <script type="text/javascript">
+            $(function () {
+                var $table = $('<table>').appendTo($('div'));
+                var $thead = $('<thead>').appendTo($table);
+                var $thead_tr = $('<tr>').appendTo($thead);
+                for (var column = 0; column < 30; column++) {
+                    $thead_tr.append($('<th>').text('column-' + column));
+                }
+                var $tbody = $('<tbody>').appendTo($table);
+                for (var row = 0; row < 10; row++) {
+                    var $tr = $('<tr>').appendTo($tbody);
+                    for (var column = 0; column < 30; column++) {
+                        $tr.append($('<td>').text('row-' + row + '-column-' + column));
+                    }
+                }
+                $table.dragtable();
+            })
+        </script>
+        <style>
+            div {
+                width: 100%;
+                overflow-x: scroll;
+            }
+            table td {
+                white-space: pre;
+            }
+            body {
+                overflow: hidden;
+            }
+        </style>
+
+        <title>jquery.dragtable.js</title>
+    </head>
+    <body>
+        <div style="">
+
+        </div>
+    </body>
+</html>
